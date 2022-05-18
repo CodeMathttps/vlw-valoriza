@@ -1,5 +1,10 @@
+import "reflect-metadata";
+import "./database"
+import { routes } from "./routes/routes"
+
 import express from "express";
 
 const app = express();
-
-app.listen(3000, () => console.log("Server is running..."));
+app.use(express.json())
+app.use(routes)
+app.listen(3000, () => console.log("Server is running...."));
